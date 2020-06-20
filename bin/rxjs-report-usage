@@ -2,4 +2,5 @@
 
 "use strict";
 
-require("../index");
+const run = require("../index");
+run().catch((error) => console.error(error));
