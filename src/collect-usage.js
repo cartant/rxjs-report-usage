@@ -6,32 +6,7 @@ const glob = require("glob");
 const { resolve } = require("path");
 const collectUsageWithinFile = require("./collect-usage-within-file");
 
-module.exports = async function collectUsage(cwd) {
-  const [sourceFiles, packageFiles] = await Promise.all(
-    [
-      "**/*.{js,jsx,ts,tsx}",
-      "node_modules/**/@(rxjs|typescript)/package.json",
-    ].map(
-      (pattern) =>
-        new Promise((resolve, reject) =>
-          glob(
-            pattern,
-            {
-              cwd,
-              ignore: ["**/node_modules/**/*.{js,jsx,ts,tsx}"],
-            },
-            (error, files) => {
-              if (error) {
-                reject(error);
-              } else {
-                resolve(files);
-              }
-            }
-          )
-        )
-    )
-  );
-
+module.exports = function collectUsage(cwd) {
   const usage = {
     apis: {},
     packageVersions: {},
@@ -39,6 +14,10 @@ module.exports = async function collectUsage(cwd) {
     timestamp: Date.now(),
   };
 
+  const sourceFiles = glob.sync("**/*.{js,jsx,ts,tsx}", {
+    cwd,
+    ignore: ["**/node_modules/**/*.*"],
+  });
   sourceFiles.forEach((file) => {
     if (/\.d\.ts$/.test(file)) {
       return;
@@ -57,6 +36,10 @@ module.exports = async function collectUsage(cwd) {
     }
   });
 
+  const packageFiles = glob.sync(
+    "node_modules/**/@(rxjs|typescript)/package.json",
+    { cwd }
+  );
   packageFiles.forEach((file) => {
     const content = JSON.parse(readFileSync(resolve(cwd, file), "utf8"));
     let versions = usage.packageVersions[content.name];
