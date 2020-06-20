@@ -48,6 +48,9 @@ module.exports = function collectUsage(cwd) {
     }
     versions.push(content.version);
   });
-
+  for (const key in usage.packageVersions) {
+    const versions = usage.packageVersions[key];
+    usage.packageVersions[key] = [...new Set(versions)];
+  }
   return usage;
 };

@@ -10,7 +10,7 @@ test("monorepo", () => {
       rxjs: { concat: 2, merge: 2, of: 8 },
       "rxjs/operators": { concatMap: 2, mergeMap: 2 },
     },
-    packageVersions: { rxjs: ["6.5.5", "6.5.4"], typescript: ["3.9.5", "3.9.4"] },
+    packageVersions: { rxjs: ["6.5.5"], typescript: ["3.9.5", "3.9.4"] },
     schemaVersion: 1,
   });
 });
