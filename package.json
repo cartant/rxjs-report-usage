@@ -7,6 +7,7 @@
     "url": "https://github.com/cartant/rxjs-report-usage/issues"
   },
   "dependencies": {
+    "@babel/parser": "^7.10.3",
     "bent": "^7.3.6",
     "glob": "^7.1.6",
     "prompts": "^2.3.2"
