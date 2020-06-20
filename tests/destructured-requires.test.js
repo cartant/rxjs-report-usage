@@ -4,12 +4,14 @@ const collectUsage = require("../src/collect-usage");
 
 test("destructured requires", () => {
   return collectUsage("./fixtures/destructured-requires").then((usage) => {
+    delete usage.timestamp;
     expect(usage).toStrictEqual({
       apis: {
         rxjs: { concat: 1, merge: 1, of: 4 },
         "rxjs/operators": { concatMap: 1, mergeMap: 1 },
       },
-      versions: { rxjs: ["6.5.5"], typescript: ["3.9.5"] },
+      packageVersions: { rxjs: ["6.5.5"], typescript: ["3.9.5"] },
+      schemaVersion: 1,
     });
   });
 });

@@ -34,7 +34,9 @@ module.exports = async function collectUsage(cwd) {
 
   const usage = {
     apis: {},
-    versions: {},
+    packageVersions: {},
+    schemaVersion: 1,
+    timestamp: Date.now(),
   };
 
   sourceFiles.forEach((file) => {
@@ -57,9 +59,9 @@ module.exports = async function collectUsage(cwd) {
 
   packageFiles.forEach((file) => {
     const content = JSON.parse(readFileSync(resolve(cwd, file), "utf8"));
-    let versions = usage.versions[content.name];
+    let versions = usage.packageVersions[content.name];
     if (!versions) {
-      versions = usage.versions[content.name] = [];
+      versions = usage.packageVersions[content.name] = [];
     }
     versions.push(content.version);
   });
