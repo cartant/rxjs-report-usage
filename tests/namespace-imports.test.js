@@ -2,7 +2,7 @@
 
 const collectUsage = require("../src/collect-usage");
 
-test.skip("namespace imports", () => {
+test("namespace imports", () => {
   return collectUsage("./fixtures/namespace-imports").then((usage) => {
     expect(usage).toStrictEqual({
       apis: {

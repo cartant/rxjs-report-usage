@@ -2,7 +2,7 @@
 
 const collectUsage = require("../src/collect-usage");
 
-test.skip("namespace requires", () => {
+test("namespace requires", () => {
   return collectUsage("./fixtures/namespace-requires").then((usage) => {
     expect(usage).toStrictEqual({
       apis: {
