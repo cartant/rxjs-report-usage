@@ -1,6 +1,6 @@
 "use strict";
 
-const { collectUsage } = require("..");
+const collectUsage = require("../src/collect-usage");
 
 test.skip("namespace requires", () => {
   return collectUsage("./fixtures/namespace-requires").then((usage) => {

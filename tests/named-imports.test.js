@@ -1,7 +1,6 @@
 "use strict";
 
-const { collectUsage } = require("..");
-const { exportAllDeclaration } = require("@babel/types");
+const collectUsage = require("../src/collect-usage");
 
 test("named imports", () => {
   return collectUsage("./fixtures/named-imports").then((usage) => {

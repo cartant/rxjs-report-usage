@@ -1,6 +1,6 @@
 "use strict";
 
-const { collectUsage } = require("..");
+const collectUsage = require("../src/collect-usage");
 
 test.skip("destructured requires", () => {
   return collectUsage("./fixtures/destructured-requires").then((usage) => {
