@@ -1,0 +1,5 @@
+/.vscode/
+/fixtures/
+/node_modules/
+/temp/
+/tests/
