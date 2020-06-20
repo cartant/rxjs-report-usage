@@ -4,6 +4,7 @@ const traverse = require("@babel/traverse").default;
 const t = require("@babel/types");
 
 module.exports = function collectUsageWithinFile(ast, usage) {
+  const locationRegExp = /^rxjs(\/|$)/;
   const visitor = {
     CallExpression(path) {
       if (!t.isVariableDeclarator(path.parent)) {
@@ -16,10 +17,14 @@ module.exports = function collectUsageWithinFile(ast, usage) {
       if (callee.name !== "require" || args.length !== 1) {
         return;
       }
-      if (!t.isStringLiteral(args[0])) {
+      const [arg] = args;
+      if (!t.isStringLiteral(arg)) {
         return;
       }
-      const { value: location } = args[0];
+      const { value: location } = arg;
+      if (!locationRegExp.test(location)) {
+        return;
+      }
       const { id } = path.parent;
       const { bindings } = path.scope;
       if (t.isIdentifier(id)) {
@@ -34,7 +39,7 @@ module.exports = function collectUsageWithinFile(ast, usage) {
     ImportDeclaration(path) {
       const { specifiers, source } = path.node;
       const { value: location } = source;
-      if (!/^rxjs(\/|$)/.test(location)) {
+      if (!locationRegExp.test(location)) {
         return;
       }
       const { bindings } = path.scope;
