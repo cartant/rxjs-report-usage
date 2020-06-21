@@ -31,3 +31,5 @@ The anonymous statistics that are collected look like this:
 ```
 
 Once the script has collected the usage statistics, the payload is shown and the developer is prompted to confirm the sending of the payload to the core team. The script sends no information without the developer's consent.
+
+For more information - including the most convenient ways of running the script - see this blog post: [Reporting API Usage](http://ncjamieson.com/reporting-api-usage/).
