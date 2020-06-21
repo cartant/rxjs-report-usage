@@ -1,7 +1,7 @@
 import React from "react";
 import { SomeDecorator } from "some-decorator";
 
-@SomeDecorator
+@SomeDecorator()
 class SomeClass {
   someProperty = 42;
   #somePrivateProperty = 54;
@@ -10,7 +10,7 @@ class SomeClass {
 }
 
 const someBigInt = 42n;
-const somNumericSeparator = 4_2;
+const someNumericSeparator = 4_2;
 
 let someLogicalAssignment = true;
 someLogicalAssignment &&= false;
