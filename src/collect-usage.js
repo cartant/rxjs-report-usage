@@ -16,12 +16,9 @@ module.exports = function collectUsage(cwd) {
 
   const sourceFiles = glob.sync("**/*.{js,jsx,ts,tsx}", {
     cwd,
-    ignore: ["**/node_modules/**/*.*"],
+    ignore: ["**/node_modules/**/*.*", "**/*.d.ts"],
   });
   sourceFiles.forEach((file) => {
-    if (/\.d\.ts$/.test(file)) {
-      return;
-    }
     const code = readFileSync(resolve(cwd, file), "utf8");
     try {
       const ast = parse(code, {
