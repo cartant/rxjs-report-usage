@@ -3,4 +3,4 @@
 "use strict";
 
 const run = require("../src");
-run().catch((error) => console.error(error));
+run(process.cwd()).catch((error) => console.error(error));
