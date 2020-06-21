@@ -44,7 +44,7 @@ module.exports = function collectUsage(cwd) {
   });
 
   const packageFiles = glob.sync(
-    "**/node_modules/**/@(rxjs|typescript)/package.json",
+    "**/node_modules/**/{rxjs,typescript}/package.json",
     { cwd }
   );
   packageFiles.forEach((file) => {
