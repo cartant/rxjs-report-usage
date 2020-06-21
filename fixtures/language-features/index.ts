@@ -1,3 +1,4 @@
+import React from "react";
 import { SomeDecorator } from "some-decorator";
 
 @SomeDecorator
@@ -23,3 +24,5 @@ try {
 } catch {
   console.error("Went boom!");
 }
+
+const someElement = <SomeComponent someProperty={someProperty} />;

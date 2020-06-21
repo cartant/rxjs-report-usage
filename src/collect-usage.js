@@ -31,6 +31,7 @@ module.exports = function collectUsage(cwd) {
           "classPrivateMethods",
           "classPrivateProperties",
           "decorators-legacy",
+          "jsx",
           "logicalAssignment",
           "numericSeparator",
           "typescript",
