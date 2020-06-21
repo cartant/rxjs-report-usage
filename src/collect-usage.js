@@ -25,7 +25,16 @@ module.exports = function collectUsage(cwd) {
     const code = readFileSync(resolve(cwd, file), "utf8");
     try {
       const ast = parse(code, {
-        plugins: ["classProperties", "typescript"],
+        // https://babeljs.io/docs/en/babel-parser#ecmascript-proposals-https-githubcom-babel-proposals
+        plugins: [
+          "classProperties",
+          "classPrivateMethods",
+          "classPrivateProperties",
+          "decorators-legacy",
+          "logicalAssignment",
+          "numericSeparator",
+          "typescript",
+        ],
         sourceType: "unambiguous",
       });
       collectUsageWithinFile(ast, usage);
