@@ -17,6 +17,7 @@
   },
   "description": "Report RxJS API usage to the core team",
   "devDependencies": {
+    "csv-parser": "^2.3.3",
     "jest": "^26.0.1"
   },
   "homepage": "https://github.com/cartant/rxjs-report-usage",
