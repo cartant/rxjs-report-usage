@@ -1,4 +1,5 @@
 /.vscode/
+/data/
 /fixtures/
 /node_modules/
 /temp/
