@@ -19,7 +19,7 @@ The anonymous statistics that are collected look like this:
     "rxjs/operators": {
       "concatMap": 1,
       "mergeMap": 1
-    },
+    }
   },
   "packageVersions": {
     "rxjs": ["6.5.5"],
