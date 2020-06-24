@@ -1,7 +1,7 @@
 "use strict";
 
 const { parse } = require("@babel/parser");
-const { readFileSync } = require("fs");
+const { readFileSync, statSync } = require("fs");
 const glob = require("glob");
 const { resolve } = require("path");
 const collectUsageWithinFile = require("./collect-usage-within-file");
@@ -19,14 +19,18 @@ module.exports = function collectUsage(cwd) {
     ignore: ["**/node_modules/**/*.*", "**/*.d.ts"],
   });
   sourceFiles.forEach((file) => {
-    const code = readFileSync(resolve(cwd, file), "utf8");
     try {
+      const resolvedFile = resolve(cwd, file);
+      if (!statSync(resolvedFile).isFile()) {
+        return;
+      }
+      const code = readFileSync(resolvedFile, "utf8");
       const ast = parse(code, {
         // https://babeljs.io/docs/en/babel-parser#ecmascript-proposals-https-githubcom-babel-proposals
         plugins: [
-          "classProperties",
           "classPrivateMethods",
           "classPrivateProperties",
+          "classProperties",
           "decorators-legacy",
           "jsx",
           "logicalAssignment",
