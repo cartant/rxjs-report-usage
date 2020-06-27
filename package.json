@@ -13,6 +13,9 @@
     "bent": "~7.3.6",
     "chalk": "~4.1.0",
     "glob": "~7.1.6",
+    "husky": "~4.2.5",
+    "lint-staged": "~10.2.11",
+    "prettier": "~2.0.5",
     "prompts": "~2.3.2"
   },
   "description": "Report RxJS API usage to the core team",
@@ -48,6 +51,9 @@
     "type": "git",
     "url": "https://github.com/cartant/rxjs-report-usage.git"
   },
-  "scripts": {},
+  "scripts": {
+    "prettier": "prettier --write \"./{bin,src,tests}/**/*.{js,json}\"",
+    "prettier:ci": "prettier --check \"./{bin,src,tests}/**/*.{js,json}\""
+  },
   "version": "1.0.5"
 }
