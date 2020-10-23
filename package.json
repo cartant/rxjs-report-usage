@@ -7,15 +7,15 @@
     "url": "https://github.com/cartant/rxjs-report-usage/issues"
   },
   "dependencies": {
-    "@babel/parser": "~7.10.3",
-    "@babel/traverse": "~7.10.3",
-    "@babel/types": "~7.10.3",
+    "@babel/parser": "^7.10.3",
+    "@babel/traverse": "^7.10.3",
+    "@babel/types": "^7.10.3",
     "bent": "~7.3.6",
     "chalk": "~4.1.0",
     "glob": "~7.1.6",
-    "husky": "~4.2.5",
-    "lint-staged": "~10.2.11",
-    "prettier": "~2.0.5",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
     "prompts": "~2.3.2"
   },
   "description": "Report RxJS API usage to the core team",
@@ -23,7 +23,7 @@
     "csv-parser": "^2.3.3",
     "jest": "^26.0.1",
     "ndjson-cli": "^0.3.1",
-    "yargs": "^15.3.1"
+    "yargs": "^16.0.0"
   },
   "homepage": "https://github.com/cartant/rxjs-report-usage",
   "husky": {
