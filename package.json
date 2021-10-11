@@ -20,7 +20,7 @@
     "csv-parser": "^2.3.3",
     "husky": "^4.2.5",
     "jest": "^27.0.0",
-    "lint-staged": "^10.2.11",
+    "lint-staged": "^11.2.3",
     "ndjson-cli": "^0.3.1",
     "prettier": "^2.0.5",
     "yargs": "^17.0.0"
