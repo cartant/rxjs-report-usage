@@ -60,5 +60,5 @@
     "prettier": "prettier --write \"./{bin,src,tests}/**/*.{js,json}\"",
     "prettier:ci": "prettier --check \"./{bin,src,tests}/**/*.{js,json}\""
   },
-  "version": "1.0.5"
+  "version": "1.0.6"
 }
