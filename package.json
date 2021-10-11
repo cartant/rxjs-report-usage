@@ -12,18 +12,18 @@
     "@babel/types": "^7.10.3",
     "bent": "~7.3.6",
     "chalk": "~4.1.0",
-    "glob": "~7.1.6",
-    "prompts": "~2.3.2"
+    "glob": "~7.2.0",
+    "prompts": "~2.4.2"
   },
   "description": "Report RxJS API usage to the core team",
   "devDependencies": {
     "csv-parser": "^2.3.3",
     "husky": "^4.2.5",
-    "jest": "^26.0.1",
+    "jest": "^27.0.0",
     "lint-staged": "^10.2.11",
     "ndjson-cli": "^0.3.1",
     "prettier": "^2.0.5",
-    "yargs": "^16.0.0"
+    "yargs": "^17.0.0"
   },
   "files": [
     "bin",
