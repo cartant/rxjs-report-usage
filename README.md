@@ -29,7 +29,7 @@ yarn rxjs-report-usage
 If you're not using any of those packages, you can install `rxjs-report-usage` as a `devDependency` and then run one of the above commands, or you can use `npx` to run the script without installing the package:
 
 ```
-npx rxjs-report-error
+npx rxjs-report-usage
 ```
 
 ### What it does actually do?
